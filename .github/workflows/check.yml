@@ -1,0 +1,19 @@
+name: Проверка корзины
+
+on: push
+
+permissions:
+  contents: read
+
+jobs:
+  checkout-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Установить pytest
+        run: python -m pip install "pytest>=8,<10"
+      - name: Проверить сумму
+        run: python -m pytest -q test_checkout.py
