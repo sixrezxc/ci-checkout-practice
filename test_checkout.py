@@ -1,5 +1,5 @@
 def calculate_total(items_total, delivery_price):
-    return items_total
+    return items_totalю
 
 
 def test_total_includes_delivery():
